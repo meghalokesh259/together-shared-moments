@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A simple shared activity planner for two people.">
+  <title>Together — Shared Moments Planner</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <div class="eyebrow">A LITTLE PLAN, A SHARED MOMENT</div>
+      <h1>Make time for <span>together.</span></h1>
+      <p class="intro">Plan something small to look forward to, even when you're in different places.</p>
+      <div class="hero-note"><span class="sparkle" aria-hidden="true">✦</span> Your next moment starts with a plan.</div>
+    </header>
+
+    <section class="planner card" aria-labelledby="form-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PLAN A MOMENT</p>
+          <h2 id="form-title">What shall we do?</h2>
+        </div>
+        <span class="pill">JUST FOR TWO</span>
+      </div>
+      <form id="activity-form">
+        <label for="activity-title">Activity</label>
+        <input id="activity-title" name="title" maxlength="80" placeholder="e.g. Watch the same movie" required>
+        <div class="form-row">
+          <div class="field">
+            <label for="activity-category">Category</label>
+            <select id="activity-category" name="category">
+              <option value="Movie night">Movie night</option>
+              <option value="Call">Call</option>
+              <option value="Game">Game</option>
+              <option value="Learn together">Learn together</option>
+              <option value="Surprise">Surprise</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="activity-time">When?</label>
+            <input id="activity-time" name="time" type="datetime-local" required>
+          </div>
+        </div>
+        <p class="form-error" id="form-error" role="alert" aria-live="polite"></p>
+        <button class="primary-button" type="submit">Add to our plans <span aria-hidden="true">＋</span></button>
+      </form>
+    </section>
+
+    <section class="list-section" aria-labelledby="list-title">
+      <div class="list-heading">
+        <div>
+          <p class="eyebrow">YOUR SHARED LIST</p>
+          <h2 id="list-title">Moments to look forward to</h2>
+        </div>
+        <span class="count" id="activity-count">0 plans</span>
+      </div>
+      <div id="activity-list" class="activity-list" aria-live="polite"></div>
+      <div id="empty-state" class="empty-state">
+        <div class="empty-icon" aria-hidden="true">♡</div>
+        <h3>Your list starts here</h3>
+        <p>Add one small thing you'd both enjoy. It doesn't need to be a big plan.</p>
+      </div>
+    </section>
+    <footer>Made with care · A small personal portfolio project</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
